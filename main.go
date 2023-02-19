@@ -1,12 +1,14 @@
 package main
 
 import (
-	"Documents/funtemps/conv"
 	"flag"
 	"fmt"
 	"math"
+
+	"github.com/arman7203/funtemps/conv"
 )
 
+// definerer hoved variabler
 var (
 	fahrenheit float64
 	celsius    float64
@@ -14,6 +16,8 @@ var (
 	out        string
 )
 
+// initialiserer variabel-flagg, der parameterne "pointer" til hovedvariablene over,
+// der første string referer til flagg, default verdien "0.0", og tilslutt info/hjelp til forbrukeren
 func init() {
 	flag.Float64Var(&fahrenheit, "F", 0.0, "temprature in fahrenheit")
 	flag.Float64Var(&celsius, "C", 0.0, "temprature in celsius")
