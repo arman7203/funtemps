@@ -78,3 +78,41 @@ func TestCelsiusToFahrenheit(t *testing.T) {
 		}
 	}
 }
+func TestFahrenheitToKelvin(t *testing.T) {
+	type test struct {
+		input float64
+		want  float64
+	}
+
+	tests := []test{
+		{input: 32, want: 273.15},
+		{input: 134, want: 330.372},
+	}
+
+	for _, tc := range tests {
+		got := FahrenheitToKelvin(tc.input)
+		if math.Abs(tc.want-got) > 0.01 {
+			t.Errorf("expected: %v, got: %v", tc.want, got)
+		}
+	}
+}
+
+func TestKelvinToFahrenheit(t *testing.T) {
+	type test struct {
+		input float64
+		want  float64
+	}
+
+	tests := []test{
+		{input: 273.15, want: 32},
+		{input: 330.372, want: 134},
+	}
+
+	for _, tc := range tests {
+		got := KelvinToFahrenheit(tc.input)
+		if math.Abs(tc.want-got) > 0.01 {
+			t.Errorf("expected: %v, got: %v", tc.want, got)
+		}
+	}
+}
+
