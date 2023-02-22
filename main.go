@@ -48,6 +48,9 @@ func main() {
 	if out == "F" && isFlagPassed("K") {
 		fmt.Println(kelvin, "K is equal to", math.Round(conv.KelvinToFahrenheit(kelvin)*100)/100, "°F")
 	}
+	if out == "K" && isFlagPassed("F") {
+		fmt.Println(fahrenheit, "°F is equal to", math.Round(conv.FahrenheitToKelvin(fahrenheit)*100)/100, "K")
+	}
 
 }
 
